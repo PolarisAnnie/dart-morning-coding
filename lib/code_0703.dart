@@ -43,16 +43,12 @@ void main() {
   // 단점 : 원본 리스트의 변경이 일어남
   // 리스트의 길이를 2로 나눈 몫만큼만 순회
 
-  // 어떻게 함수화 시키지..음..
-  // 총 개수 / 2 => 나머지가 있는 경우 가운데 값 그대로, 나머지가 없는 경우 모든 짝 번지끼리 교체 필요
-  int remainder = arr.length % 2;
   int quotient = arr.length ~/ 2;
-  if (remainder == 0) {
-    for (int i = 0; i <= quotient; i++) {
-      for (int j = arr.length; j >= quotient; i--) {}
-      arr[arr.length];
-    }
-  } else {}
+  for (int i = 0; i < quotient; i++) {
+    int temp = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = arr[i];
+    arr[i] = temp;
+  }
   print(arr);
 }
 
