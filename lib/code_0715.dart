@@ -8,6 +8,7 @@ void main() {
 // 2. 문자열 내의 소문자는 대문자로, 대문자는 소문자로 변경한 뒤
 // 3. 새로운 문자열 반환
 
+// 내 풀이
 String swapCase(String text) {
   List<String> textList = text.split("");
   for (int i = 0; i < textList.length; i++) {
@@ -23,7 +24,7 @@ String swapCase(String text) {
   return textList.join('');
 }
 
-/* 풀이
+/* 튜터님 풀이
 String swapCase(String str){
 
 List<int> codeUnits = str.codeUnits;
