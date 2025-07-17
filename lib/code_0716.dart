@@ -22,6 +22,7 @@ String compression(String str) {
   if (str.isEmpty) {
     return "";
   }
+
   for (int i = 1; i < strSplit.length; i++) {
     // 만일 이전 글자와 현재 글자가 같다면 => counter 증가
     // 다르다면 => 이전 문자열 + counter를 newStr에 추가, counter를 1로 초기화
