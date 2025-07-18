@@ -15,8 +15,8 @@ void main() {
 // 글자 단위로 split해서 @, . 의 위치를 기반으로 이메일 형식 검증해보기
 
 bool isEmail(String str) {
-  int atPos = -1;
-  int dotPos = -1;
+  int atPos = -1; // @ 위치를 저장(-1은 아직 못찾음)
+  int dotPos = -1; // . 위치를 저장(-1은 아직 못찾음)
   List<String> chars = str.split('');
   for (var i = 0; i < chars.length; i++) {
     String char = chars[i];
@@ -27,11 +27,11 @@ bool isEmail(String str) {
     }
   }
 
-  // @ 앞에 글자가 없는 경우
+  // @가 없거나, 첫글자가 @인 경우
   if (atPos < 1) {
     return false;
   }
-  // @와 . 사이에 아무
+  // .이 @보다 앞에 있거나, .이 마지막 글자이거나, @ 바로 다음이 .인 경우
   if (dotPos < atPos || dotPos == chars.length - 1 || dotPos - 1 == atPos) {
     return false;
   }
